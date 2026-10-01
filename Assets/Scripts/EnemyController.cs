@@ -103,7 +103,7 @@ public class EnemyController : MonoBehaviour
 
     #region HealthFunctions
 
-    private void takeDamage(float amount)
+    public void takeDamage(float amount)
     {
         this.health -= amount;
         // if this enemy has no health he dies!

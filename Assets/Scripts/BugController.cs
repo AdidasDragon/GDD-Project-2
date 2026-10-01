@@ -4,9 +4,15 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class BugController : MonoBehaviour
 {
+    [Header("Health")]
+    [SerializeField] private int maxHealth = 3;
+    private int currentHealth;
+    [SerializeField] private float invincibilityDuration = 1f;
+    private float invincibilityTimer;
+
     [Header("move")]
     [SerializeField] private float moveSpeed = 8f;
-    [SerializeField] private float jumpForce = 14f;
+    [SerializeField] private float jumpForce = 10f;
     [SerializeField] private float fallMultiplier = 2.5f;
     [SerializeField] private float lowJumpMultiplier = 2f;
 
@@ -19,11 +25,14 @@ public class BugController : MonoBehaviour
     [SerializeField] private GameObject laserPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float fireRate = 0.2f;
+    [SerializeField] private float fireDistance = 0.8f;
 
     private Rigidbody2D rb;
     private float horizontalInput;
+    private float verticalInput;
     private bool isGrounded;
     private float nextFireTime;
+    private int aimingFacingDirection = 1;
 
     private float coyoteTime = 0.15f;
     private float coyoteTimeCounter;
@@ -33,23 +42,37 @@ public class BugController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
     }
 
     private void Update()
     {
         horizontalInput = 0f;
+        verticalInput = 0f;
+
         if (Keyboard.current != null)
         {
             if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed)
                 horizontalInput -= 1f;
             if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed)
                 horizontalInput += 1f;
+
+            if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed)
+                verticalInput += 1f;
+            if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed)
+                verticalInput -= 1f;
         }
 
         if (horizontalInput > 0)
-            transform.localScale = new Vector3(1, 1, 1);
+        {
+            aimingFacingDirection = 1;
+        }
         else if (horizontalInput < 0)
-            transform.localScale = new Vector3(-1, 1, 1);
+        {
+            aimingFacingDirection = -1;
+        }
+
+        UpdateFirePointTransform();
 
         if (groundCheck != null)
         {
@@ -77,14 +100,17 @@ public class BugController : MonoBehaviour
             jumpBufferCounter = 0f;
         }
 
-        bool fireInput = false;
-        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame) fireInput = true;
-        if (Keyboard.current != null && Keyboard.current.jKey.wasPressedThisFrame) fireInput = true;
+        bool fireInput = (Keyboard.current != null && Keyboard.current.jKey.wasPressedThisFrame) ||
+                        (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame);
 
         if (fireInput && Time.time >= nextFireTime)
         {
             ShootLaser();
             nextFireTime = Time.time + fireRate;
+        }
+        if (invincibilityTimer > 0)
+        {
+            invincibilityTimer -= Time.deltaTime;
         }
     }
 
@@ -103,18 +129,59 @@ public class BugController : MonoBehaviour
         }
     }
 
-    private void ShootLaser()
+    private void UpdateFirePointTransform()
     {
-        if (laserPrefab == null)
+        if (firePoint == null) return;
+
+        float angle = 0f;
+
+        if (verticalInput > 0)
         {
-            return;
+            if (horizontalInput != 0)
+            {
+                angle = aimingFacingDirection > 0 ? 45f : 135f;
+            }
+            else
+            {
+                angle = 90f;
+            }
         }
-        if (firePoint == null)
+        else if (verticalInput < 0 && !isGrounded)
         {
-            return;
+            angle = -90f;
+        }
+        else
+        {
+            angle = aimingFacingDirection > 0 ? 0f : 180f;
         }
 
+        float rad = angle * Mathf.Deg2Rad;
+        Vector3 offset = new Vector3(Mathf.Cos(rad), Mathf.Sin(rad), 0f) * fireDistance;
+
+        firePoint.localPosition = offset;
+        firePoint.localRotation = Quaternion.Euler(0f, 0f, angle);
+    }
+
+    private void ShootLaser()
+    {
+        if (laserPrefab == null || firePoint == null) return;
+
         Instantiate(laserPrefab, firePoint.position, firePoint.rotation);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (invincibilityTimer > 0) return;
+
+        currentHealth -= damage;
+        invincibilityTimer = invincibilityDuration;
+        Debug.Log($"[玩家受击] 剩余血量: {currentHealth}");
+
+        if (currentHealth <= 0)
+        {
+            Debug.Log("[玩家阵亡] STACK OVERFLOW! 重启关卡...");
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnDrawGizmosSelected()

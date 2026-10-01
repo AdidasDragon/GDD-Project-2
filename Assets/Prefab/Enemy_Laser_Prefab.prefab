@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aa49a1d30a4ef42a61f18abfc48c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyLaser
-  speed: 7
+  speed: 15
   damage: 1
   lifeTime: 4
   playerTarget: {fileID: 0}

@@ -22,11 +22,21 @@ public class SyntaxLaser : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Player") || collision.GetComponent<BugController>() != null)
         {
-            Destroy(gameObject);
+            return;
         }
-        else if (collision.CompareTag("Ground"))
+        if (collision.CompareTag("Enemy") || collision.GetComponent<EnemyController>() != null)
+        {
+            EnemyController enemy = collision.GetComponent<EnemyController>();
+            if (enemy != null)
+            {
+                enemy.takeDamage(damage);
+            }
+            Destroy(gameObject);
+            return;
+        }
+        if (collision.CompareTag("Ground") || collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             Destroy(gameObject);
         }

@@ -36,20 +36,34 @@ public class EnemyLaser : MonoBehaviour
         {
             Vector2 direction = (playerTarget.position - transform.position).normalized;
             rb.linearVelocity = direction * speed;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, angle);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Enemy") || collision.GetComponentInParent<EnemyController>() != null)
         {
-            // fetch transform of player
-            playerTarget = collision.transform;
-            // call player taking damage here (remember to do this)
-
-            Destroy(gameObject);
+            return;
         }
-        else if (collision.CompareTag("Ground"))
+        BugController player = collision.GetComponent<BugController>();
+        if (player == null)
+        {
+            player = collision.GetComponentInParent<BugController>();
+        }
+
+        if (player != null || collision.CompareTag("Player"))
+        {
+            if (player != null)
+            {
+                player.TakeDamage(damage);
+            }
+            Destroy(gameObject);
+            return;
+        }
+
+        if (collision.CompareTag("Ground") || collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             Destroy(gameObject);
         }
