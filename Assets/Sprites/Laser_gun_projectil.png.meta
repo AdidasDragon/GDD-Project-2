@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: 83d8d373d389e0e4fae82e122de11e6b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5449812260092144424
+    second: Laser_gun_projectil_0
+  - first:
+      213: -3749828448771116813
+    second: Laser_gun_projectil_1
+  - first:
+      213: -5381416783978188722
+    second: Laser_gun_projectil_2
+  - first:
+      213: -2577638430168163605
+    second: Laser_gun_projectil_3
+  - first:
+      213: -6692365586128151521
+    second: Laser_gun_projectil_4
+  - first:
+      213: -1262234075761139306
+    second: Laser_gun_projectil_5
+  - first:
+      213: -2634169969215666890
+    second: Laser_gun_projectil_6
+  - first:
+      213: -5731790072370644285
+    second: Laser_gun_projectil_7
+  - first:
+      213: 1011602001790584571
+    second: Laser_gun_projectil_8
+  - first:
+      213: -4260379193877626157
+    second: Laser_gun_projectil_9
+  - first:
+      213: -8308002649889182308
+    second: Laser_gun_projectil_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Laser_gun_projectil_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 119
+        width: 137
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82b6c5f406f91ab40800000000000000
+      internalID: 5449812260092144424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1a792676a2d1a3b4a8766ec38b32751d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Laser_gun_projectil_0: 5449812260092144424
+      Laser_gun_projectil_1: -3749828448771116813
+      Laser_gun_projectil_10: -8308002649889182308
+      Laser_gun_projectil_2: -5381416783978188722
+      Laser_gun_projectil_3: -2577638430168163605
+      Laser_gun_projectil_4: -6692365586128151521
+      Laser_gun_projectil_5: -1262234075761139306
+      Laser_gun_projectil_6: -2634169969215666890
+      Laser_gun_projectil_7: -5731790072370644285
+      Laser_gun_projectil_8: 1011602001790584571
+      Laser_gun_projectil_9: -4260379193877626157
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
