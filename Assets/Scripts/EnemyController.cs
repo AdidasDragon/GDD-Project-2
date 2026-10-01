@@ -10,6 +10,9 @@ public class EnemyController : MonoBehaviour
     float laserCooldown;
 
     [SerializeField] private GameObject Enemy_Laser_Prefab;
+    [SerializeField] private Animator Enemy_animation;
+
+
     [SerializeField] public float moveSpeed = 3f;
     [SerializeField] private float stopDistance = 2.5f; // stop when within this distance
     [SerializeField] private float heightOffset = 2f; // stop when within this distance
@@ -43,6 +46,11 @@ public class EnemyController : MonoBehaviour
                 shootPlayer();
                 laserCooldown = fireRate; // Reset cooldown
             }
+        } 
+
+        if (playerTarget==null)
+        {
+            Enemy_animation.SetBool("isAttacking", false);
         }
     }
     #endregion
@@ -91,6 +99,8 @@ public class EnemyController : MonoBehaviour
             Vector3 spawnPos = transform.position;
             Quaternion spawnRot = transform.rotation;
             Debug.Log("I see enemy, I can now shoot at them");
+            //change animation to attacking animation
+            Enemy_animation.SetBool("isAttacking", true);
             Instantiate(Enemy_Laser_Prefab, spawnPos, spawnRot);
         }
     }
@@ -106,11 +116,26 @@ public class EnemyController : MonoBehaviour
     private void takeDamage(float amount)
     {
         this.health -= amount;
+
         // if this enemy has no health he dies!
         if (this.health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+        // play enemy hurt animation if still alive
+        Enemy_animation.SetTrigger("isHurt"); 
+    }
+
+    public void Die()
+    {
+        Enemy_animation.SetTrigger("isDying");
+        StartCoroutine(WaitAndDestroy());
+    }
+
+    private IEnumerator WaitAndDestroy()
+    {
+        yield return new WaitForSeconds(2); // match animation duration
+        Destroy(gameObject);
     }
     #endregion
 }

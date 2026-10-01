@@ -1,0 +1,451 @@
+fileFormatVersion: 2
+guid: f0e7eb87c43c789419da2964150e875c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3059145971920309617
+    second: Enemy_dying-Sheet_0
+  - first:
+      213: 8246597401929130939
+    second: Enemy_dying-Sheet_1
+  - first:
+      213: 4628450332133971501
+    second: Enemy_dying-Sheet_2
+  - first:
+      213: -7619486637953953298
+    second: Enemy_dying-Sheet_3
+  - first:
+      213: 7146650506657324970
+    second: Enemy_dying-Sheet_4
+  - first:
+      213: -2211567665622076510
+    second: Enemy_dying-Sheet_5
+  - first:
+      213: 4484070017324962734
+    second: Enemy_dying-Sheet_6
+  - first:
+      213: 7820177876892074444
+    second: Enemy_dying-Sheet_7
+  - first:
+      213: 7357295098902469337
+    second: Enemy_dying-Sheet_8
+  - first:
+      213: 7846280898838218330
+    second: Enemy_dying-Sheet_9
+  - first:
+      213: 7170670832182436309
+    second: Enemy_dying-Sheet_10
+  - first:
+      213: -7464048955143494125
+    second: Enemy_dying-Sheet_11
+  - first:
+      213: -2003080488428555899
+    second: Enemy_dying-Sheet_12
+  - first:
+      213: -1041273872047200717
+    second: Enemy_dying-Sheet_13
+  - first:
+      213: -7457530857766308620
+    second: Enemy_dying-Sheet_14
+  - first:
+      213: 6155717890056094850
+    second: Enemy_dying-Sheet_15
+  - first:
+      213: 4367562425636568603
+    second: Enemy_dying-Sheet_16
+  - first:
+      213: 590987709235320853
+    second: Enemy_dying-Sheet_17
+  - first:
+      213: 6025400462815735007
+    second: Enemy_dying-Sheet_18
+  - first:
+      213: 6613685954743983638
+    second: Enemy_dying-Sheet_19
+  - first:
+      213: -5358455641864468617
+    second: Enemy_dying-Sheet_20
+  - first:
+      213: 6988479545715967829
+    second: Enemy_dying-Sheet_21
+  - first:
+      213: 8897333193971845744
+    second: Enemy_dying-Sheet_22
+  - first:
+      213: -4906222870408910495
+    second: Enemy_dying-Sheet_23
+  - first:
+      213: 7190940822233106478
+    second: Enemy_dying-Sheet_24
+  - first:
+      213: 3554391737562615759
+    second: Enemy_dying-Sheet_25
+  - first:
+      213: -7466235059712181523
+    second: Enemy_dying-Sheet_26
+  - first:
+      213: -8402120829186365812
+    second: Enemy_dying-Sheet_27
+  - first:
+      213: 8419971271476164252
+    second: Enemy_dying-Sheet_28
+  - first:
+      213: 7240981088687433588
+    second: Enemy_dying-Sheet_29
+  - first:
+      213: 6049595203292608282
+    second: Enemy_dying-Sheet_30
+  - first:
+      213: 6570960775921980283
+    second: Enemy_dying-Sheet_31
+  - first:
+      213: 4987286677210758897
+    second: Enemy_dying-Sheet_32
+  - first:
+      213: -2985798313600723854
+    second: Enemy_dying-Sheet_33
+  - first:
+      213: 7387521758096277312
+    second: Enemy_dying-Sheet_34
+  - first:
+      213: 1590167273394970198
+    second: Enemy_dying-Sheet_35
+  - first:
+      213: 1480146642262905506
+    second: Enemy_dying-Sheet_36
+  - first:
+      213: -6712520368394333144
+    second: Enemy_dying-Sheet_37
+  - first:
+      213: 1904378120741584684
+    second: Enemy_dying-Sheet_38
+  - first:
+      213: -5780956852580896710
+    second: Enemy_dying-Sheet_39
+  - first:
+      213: 6096238837909524390
+    second: Enemy_dying-Sheet_40
+  - first:
+      213: 2069433205520377195
+    second: Enemy_dying-Sheet_41
+  - first:
+      213: 3764453006664443414
+    second: Enemy_dying-Sheet_42
+  - first:
+      213: 2530802037112398006
+    second: Enemy_dying-Sheet_43
+  - first:
+      213: 878286273059918089
+    second: Enemy_dying-Sheet_44
+  - first:
+      213: 2148695317692258723
+    second: Enemy_dying-Sheet_45
+  - first:
+      213: -8623519845234416607
+    second: Enemy_dying-Sheet_46
+  - first:
+      213: -2542563778924608512
+    second: Enemy_dying-Sheet_47
+  - first:
+      213: -2200364099843720889
+    second: Enemy_dying-Sheet_48
+  - first:
+      213: -7677979027104329029
+    second: Enemy_dying-Sheet_49
+  - first:
+      213: -6203293314450354443
+    second: Enemy_dying-Sheet_50
+  - first:
+      213: -4757650740890485935
+    second: Enemy_dying-Sheet_51
+  - first:
+      213: -319015833406146541
+    second: Enemy_dying-Sheet_52
+  - first:
+      213: -4328022602549861538
+    second: Enemy_dying-Sheet_53
+  - first:
+      213: 9063452226125599817
+    second: Enemy_dying-Sheet_54
+  - first:
+      213: -2306102079020602364
+    second: Enemy_dying-Sheet_55
+  - first:
+      213: -629427093035412833
+    second: Enemy_dying-Sheet_56
+  - first:
+      213: 1173457969269514443
+    second: Enemy_dying-Sheet_57
+  - first:
+      213: -1097846768586357148
+    second: Enemy_dying-Sheet_58
+  - first:
+      213: -3206754725874374669
+    second: Enemy_dying-Sheet_59
+  - first:
+      213: -5547818528405304276
+    second: Enemy_dying-Sheet_60
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Enemy_dying-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 69
+        width: 148
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17d806cad05447a20800000000000000
+      internalID: 3059145971920309617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_dying-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 73
+        width: 163
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb325ab05acc17270800000000000000
+      internalID: 8246597401929130939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_dying-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 64
+        width: 138
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d265263fd0f8b3040800000000000000
+      internalID: 4628450332133971501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy_dying-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 70
+        width: 140
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc14580985ad68c60800000000000000
+      internalID: 7820177876892074444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c200d056e329038428195bc8e10b4a78
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Enemy_dying-Sheet_0: 3059145971920309617
+      Enemy_dying-Sheet_1: 8246597401929130939
+      Enemy_dying-Sheet_10: 7170670832182436309
+      Enemy_dying-Sheet_11: -7464048955143494125
+      Enemy_dying-Sheet_12: -2003080488428555899
+      Enemy_dying-Sheet_13: -1041273872047200717
+      Enemy_dying-Sheet_14: -7457530857766308620
+      Enemy_dying-Sheet_15: 6155717890056094850
+      Enemy_dying-Sheet_16: 4367562425636568603
+      Enemy_dying-Sheet_17: 590987709235320853
+      Enemy_dying-Sheet_18: 6025400462815735007
+      Enemy_dying-Sheet_19: 6613685954743983638
+      Enemy_dying-Sheet_2: 4628450332133971501
+      Enemy_dying-Sheet_20: -5358455641864468617
+      Enemy_dying-Sheet_21: 6988479545715967829
+      Enemy_dying-Sheet_22: 8897333193971845744
+      Enemy_dying-Sheet_23: -4906222870408910495
+      Enemy_dying-Sheet_24: 7190940822233106478
+      Enemy_dying-Sheet_25: 3554391737562615759
+      Enemy_dying-Sheet_26: -7466235059712181523
+      Enemy_dying-Sheet_27: -8402120829186365812
+      Enemy_dying-Sheet_28: 8419971271476164252
+      Enemy_dying-Sheet_29: 7240981088687433588
+      Enemy_dying-Sheet_3: -7619486637953953298
+      Enemy_dying-Sheet_30: 6049595203292608282
+      Enemy_dying-Sheet_31: 6570960775921980283
+      Enemy_dying-Sheet_32: 4987286677210758897
+      Enemy_dying-Sheet_33: -2985798313600723854
+      Enemy_dying-Sheet_34: 7387521758096277312
+      Enemy_dying-Sheet_35: 1590167273394970198
+      Enemy_dying-Sheet_36: 1480146642262905506
+      Enemy_dying-Sheet_37: -6712520368394333144
+      Enemy_dying-Sheet_38: 1904378120741584684
+      Enemy_dying-Sheet_39: -5780956852580896710
+      Enemy_dying-Sheet_4: 7146650506657324970
+      Enemy_dying-Sheet_40: 6096238837909524390
+      Enemy_dying-Sheet_41: 2069433205520377195
+      Enemy_dying-Sheet_42: 3764453006664443414
+      Enemy_dying-Sheet_43: 2530802037112398006
+      Enemy_dying-Sheet_44: 878286273059918089
+      Enemy_dying-Sheet_45: 2148695317692258723
+      Enemy_dying-Sheet_46: -8623519845234416607
+      Enemy_dying-Sheet_47: -2542563778924608512
+      Enemy_dying-Sheet_48: -2200364099843720889
+      Enemy_dying-Sheet_49: -7677979027104329029
+      Enemy_dying-Sheet_5: -2211567665622076510
+      Enemy_dying-Sheet_50: -6203293314450354443
+      Enemy_dying-Sheet_51: -4757650740890485935
+      Enemy_dying-Sheet_52: -319015833406146541
+      Enemy_dying-Sheet_53: -4328022602549861538
+      Enemy_dying-Sheet_54: 9063452226125599817
+      Enemy_dying-Sheet_55: -2306102079020602364
+      Enemy_dying-Sheet_56: -629427093035412833
+      Enemy_dying-Sheet_57: 1173457969269514443
+      Enemy_dying-Sheet_58: -1097846768586357148
+      Enemy_dying-Sheet_59: -3206754725874374669
+      Enemy_dying-Sheet_6: 4484070017324962734
+      Enemy_dying-Sheet_60: -5547818528405304276
+      Enemy_dying-Sheet_7: 7820177876892074444
+      Enemy_dying-Sheet_8: 7357295098902469337
+      Enemy_dying-Sheet_9: 7846280898838218330
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
