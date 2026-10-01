@@ -123,7 +123,7 @@ public class EnemyController : MonoBehaviour
             Die();
         }
         // play enemy hurt animation if still alive
-        Enemy_animation.SetTrigger("isHurt"); 
+        Enemy_animation.SetTrigger("isHit"); 
     }
 
     public void Die()
@@ -134,7 +134,9 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator WaitAndDestroy()
     {
-        yield return new WaitForSeconds(2); // match animation duration
+        AnimatorClipInfo[] clipInfo = Enemy_animation.GetCurrentAnimatorClipInfo(0); // 0 = base layer
+        float clipLength = clipInfo[0].clip.length;
+        yield return new WaitForSeconds(clipLength); // match animation duration
         Destroy(gameObject);
     }
     #endregion
