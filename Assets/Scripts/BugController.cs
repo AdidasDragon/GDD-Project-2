@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class BugController : MonoBehaviour
 {
+    [SerializeField] private Animator player_Animation;
+
     [Header("Health")]
     [SerializeField] private int maxHealth = 3;
     private int currentHealth;
