@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: 731ae9af4d01040329c4a349b139f76e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5775021732999895116
+    second: Player_character_dying-Sheet_0
+  - first:
+      213: 6106919059479912326
+    second: Player_character_dying-Sheet_1
+  - first:
+      213: -2055375063745338289
+    second: Player_character_dying-Sheet_2
+  - first:
+      213: -5227276131303417487
+    second: Player_character_dying-Sheet_3
+  - first:
+      213: 8780993855596226892
+    second: Player_character_dying-Sheet_4
+  - first:
+      213: -3390883685346400665
+    second: Player_character_dying-Sheet_5
+  - first:
+      213: 2395497435355919314
+    second: Player_character_dying-Sheet_6
+  - first:
+      213: 8366683633351319478
+    second: Player_character_dying-Sheet_7
+  - first:
+      213: 5213576049209420987
+    second: Player_character_dying-Sheet_8
+  - first:
+      213: 3766369727690756558
+    second: Player_character_dying-Sheet_9
+  - first:
+      213: -8876872865020948805
+    second: Player_character_dying-Sheet_10
+  - first:
+      213: 3211837410735747815
+    second: Player_character_dying-Sheet_11
+  - first:
+      213: 5465110711064071978
+    second: Player_character_dying-Sheet_12
+  - first:
+      213: -4254377887349786175
+    second: Player_character_dying-Sheet_13
+  - first:
+      213: 514703520180937355
+    second: Player_character_dying-Sheet_14
+  - first:
+      213: 2996718315394243536
+    second: Player_character_dying-Sheet_15
+  - first:
+      213: 5226988137910042731
+    second: Player_character_dying-Sheet_16
+  - first:
+      213: -6830939599139918022
+    second: Player_character_dying-Sheet_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 44
+        width: 142
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b7616ac4500bdfa0800000000000000
+      internalID: -5775021732999895116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 34
+        width: 137
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68fdc5c578220c450800000000000000
+      internalID: 6106919059479912326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 39
+        width: 132
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f446345f447d973e0800000000000000
+      internalID: -2055375063745338289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 44
+        width: 142
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17918cacd0cf477b0800000000000000
+      internalID: -5227276131303417487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 34
+        width: 137
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4963b1536b5cd970800000000000000
+      internalID: 8780993855596226892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 39
+        width: 132
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 766a24cf04921f0d0800000000000000
+      internalID: -3390883685346400665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 49
+        width: 122
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d3bfbeb9348e3120800000000000000
+      internalID: 2395497435355919314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 169
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bfdaf99f6e6c1470800000000000000
+      internalID: 8366683633351319478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1734
+        y: 69
+        width: 97
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbcac964bc75a5840800000000000000
+      internalID: 5213576049209420987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1954
+        y: 79
+        width: 137
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec1dacfef45d44430800000000000000
+      internalID: 3766369727690756558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2094
+        y: 154
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbe4f1439230fc480800000000000000
+      internalID: -8876872865020948805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 124
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e2f637ab1db29c20800000000000000
+      internalID: 3211837410735747815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 119
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2f082f7c39f7db40800000000000000
+      internalID: 5465110711064071978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1589
+        y: 79
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c93d342ad965f4c0800000000000000
+      internalID: -4254377887349786175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 2199
+        y: 49
+        width: 162
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b822705ef18942700800000000000000
+      internalID: 514703520180937355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 2439
+        y: 49
+        width: 152
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db1bf83e6b769920800000000000000
+      internalID: 2996718315394243536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 2679
+        y: 49
+        width: 162
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b600f45840ef98840800000000000000
+      internalID: 5226988137910042731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_character_dying-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 2919
+        y: 49
+        width: 162
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3fad1f50a0a331a0800000000000000
+      internalID: -6830939599139918022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Player_character_dying-Sheet_0: -5775021732999895116
+      Player_character_dying-Sheet_1: 6106919059479912326
+      Player_character_dying-Sheet_10: -8876872865020948805
+      Player_character_dying-Sheet_11: 3211837410735747815
+      Player_character_dying-Sheet_12: 5465110711064071978
+      Player_character_dying-Sheet_13: -4254377887349786175
+      Player_character_dying-Sheet_14: 514703520180937355
+      Player_character_dying-Sheet_15: 2996718315394243536
+      Player_character_dying-Sheet_16: 5226988137910042731
+      Player_character_dying-Sheet_17: -6830939599139918022
+      Player_character_dying-Sheet_2: -2055375063745338289
+      Player_character_dying-Sheet_3: -5227276131303417487
+      Player_character_dying-Sheet_4: 8780993855596226892
+      Player_character_dying-Sheet_5: -3390883685346400665
+      Player_character_dying-Sheet_6: 2395497435355919314
+      Player_character_dying-Sheet_7: 8366683633351319478
+      Player_character_dying-Sheet_8: 5213576049209420987
+      Player_character_dying-Sheet_9: 3766369727690756558
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
