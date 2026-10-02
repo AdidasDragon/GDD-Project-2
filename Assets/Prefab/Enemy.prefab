@@ -240,7 +240,7 @@ MonoBehaviour:
   moveSpeed: 2
   stopDistance: 1
   heightOffset: 1.75
-  health: 5
+  health: 3
   fireRate: 3
   attackRange: 7
 --- !u!95 &444569047729012962

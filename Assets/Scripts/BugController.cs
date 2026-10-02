@@ -266,6 +266,7 @@ public class BugController : MonoBehaviour
     {
         isDead = true;
 
+        StopAllCoroutines();
         float knockbackDirX = transform.position.x < damageSourcePosition.x ? -1f : 1f;
         rb.linearVelocity = new Vector2(knockbackDirX * knockbackForce.x, knockbackForce.y);
 
@@ -277,33 +278,34 @@ public class BugController : MonoBehaviour
     {
         yield return null;
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
 
         Collider2D col = GetComponent<Collider2D>();
         if (col != null) col.enabled = false;
 
-        float duration = 1.0f;
+        float animLength = 0.8f;
         if (player_Animation != null)
         {
             AnimatorClipInfo[] clipInfo = player_Animation.GetCurrentAnimatorClipInfo(0);
             if (clipInfo.Length > 0 && clipInfo[0].clip != null)
             {
-                duration = Mathf.Max(0f, clipInfo[0].clip.length - 0.3f);
+                animLength = clipInfo[0].clip.length;
             }
         }
 
-        yield return new WaitForSeconds(duration);
+        float freezeAdvanceTime = 0.15f; 
 
-        if (GameManager.Instance != null)
+        float timeUntilFreeze = Mathf.Max(0f, animLength - 0.2f - freezeAdvanceTime);
+        yield return new WaitForSeconds(timeUntilFreeze);
+
+        if (player_Animation != null)
         {
-            GameManager.Instance.MainMenu();
+            player_Animation.speed = 0f;
         }
-        else
-        {
-            gameObject.SetActive(false);
-        }
+
+        yield return new WaitForSeconds(0.2f);
         SceneManager.LoadScene("DeathScene");
     }
 
