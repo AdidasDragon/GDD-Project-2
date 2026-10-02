@@ -1,16 +1,21 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class BugController : MonoBehaviour
 {
     [SerializeField] private Animator player_Animation;
+    private SpriteRenderer spriteRenderer;
 
     [Header("Health")]
     [SerializeField] private int maxHealth = 3;
     private int currentHealth;
     [SerializeField] private float invincibilityDuration = 1f;
     private float invincibilityTimer;
+    private bool isHurt = false;
+    private bool isDead = false;
 
     [Header("move")]
     [SerializeField] private float moveSpeed = 8f;
@@ -28,6 +33,13 @@ public class BugController : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private float fireRate = 0.2f;
     [SerializeField] private float fireDistance = 0.8f;
+    [SerializeField] private Vector2 firePointBaseOffset = new Vector2(0f, 0.2f);
+
+    [Header("Knockback")]
+    [SerializeField] private Vector2 knockbackForce = new Vector2(2.5f, 2.5f);
+
+    [Header("Health UI")]
+    [SerializeField] private PlayerHealthBar healthBar;
 
     private Rigidbody2D rb;
     private float horizontalInput;
@@ -41,14 +53,33 @@ public class BugController : MonoBehaviour
     private float jumpBufferTime = 0.15f;
     private float jumpBufferCounter;
 
+    private string currentAnimState = "";
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        if (player_Animation == null)
+        {
+            player_Animation = GetComponent<Animator>();
+            if (player_Animation == null)
+            {
+                player_Animation = GetComponentInChildren<Animator>();
+            }
+        }
+
         currentHealth = maxHealth;
+        if (healthBar != null)
+        {
+            healthBar.UpdateHealth(currentHealth, maxHealth);
+        }
     }
 
     private void Update()
     {
+        if (isDead || isHurt) return;
+
         horizontalInput = 0f;
         verticalInput = 0f;
 
@@ -68,10 +99,12 @@ public class BugController : MonoBehaviour
         if (horizontalInput > 0)
         {
             aimingFacingDirection = 1;
+            if (spriteRenderer != null) spriteRenderer.flipX = false;
         }
         else if (horizontalInput < 0)
         {
             aimingFacingDirection = -1;
+            if (spriteRenderer != null) spriteRenderer.flipX = true;
         }
 
         UpdateFirePointTransform();
@@ -100,6 +133,7 @@ public class BugController : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpBufferCounter = 0f;
+            AudioManager.Instance?.PlaySFX(AudioManager.Instance.jumpClip);
         }
 
         bool fireInput = (Keyboard.current != null && Keyboard.current.jKey.wasPressedThisFrame) ||
@@ -110,14 +144,19 @@ public class BugController : MonoBehaviour
             ShootLaser();
             nextFireTime = Time.time + fireRate;
         }
+
         if (invincibilityTimer > 0)
         {
             invincibilityTimer -= Time.deltaTime;
         }
+
+        UpdateAnimation();
     }
 
     private void FixedUpdate()
     {
+        if (isDead || isHurt) return;
+
         rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
         bool isJumpHeld = Keyboard.current != null && Keyboard.current.spaceKey.isPressed;
 
@@ -148,7 +187,7 @@ public class BugController : MonoBehaviour
                 angle = 90f;
             }
         }
-        else if (verticalInput < 0 && !isGrounded)
+        else if (verticalInput < 0)
         {
             angle = -90f;
         }
@@ -159,8 +198,9 @@ public class BugController : MonoBehaviour
 
         float rad = angle * Mathf.Deg2Rad;
         Vector3 offset = new Vector3(Mathf.Cos(rad), Mathf.Sin(rad), 0f) * fireDistance;
+        Vector3 baseOffset = new Vector3(firePointBaseOffset.x * aimingFacingDirection, firePointBaseOffset.y, 0f);
 
-        firePoint.localPosition = offset;
+        firePoint.localPosition = baseOffset + offset;
         firePoint.localRotation = Quaternion.Euler(0f, 0f, angle);
     }
 
@@ -169,20 +209,183 @@ public class BugController : MonoBehaviour
         if (laserPrefab == null || firePoint == null) return;
 
         Instantiate(laserPrefab, firePoint.position, firePoint.rotation);
+        AudioManager.Instance?.PlaySFX(AudioManager.Instance.shootClip);
     }
 
-    public void TakeDamage(int damage)
-    {
-        if (invincibilityTimer > 0) return;
+    public void TakeDamage(int damage, Vector2 damageSourcePosition = default)
+    {   
+        if (invincibilityTimer > 0 || isDead) return;
 
         currentHealth -= damage;
         invincibilityTimer = invincibilityDuration;
-        Debug.Log($"[玩家受击] 剩余血量: {currentHealth}");
+
+        if (healthBar != null)
+        {
+            healthBar.UpdateHealth(currentHealth, maxHealth);
+        }
+
+        AudioManager.Instance?.PlaySFX(AudioManager.Instance.hurtClip);
+
+        if (damageSourcePosition == default)
+        {
+            damageSourcePosition = (Vector2)transform.position + Vector2.right * aimingFacingDirection;
+        }
 
         if (currentHealth <= 0)
         {
-            Debug.Log("[玩家阵亡] STACK OVERFLOW! 重启关卡...");
+            Die(damageSourcePosition);
+        }
+        else
+        {
+            StartCoroutine(HurtRoutine(damageSourcePosition));
+        }
+    }
+
+    private IEnumerator HurtRoutine(Vector2 damageSourcePosition)
+    {
+        isHurt = true;
+        float knockbackDirX = transform.position.x < damageSourcePosition.x ? -1f : 1f;
+        rb.linearVelocity = new Vector2(knockbackDirX * knockbackForce.x, knockbackForce.y);
+        ChangeAnimationState("hurt");
+
+        float duration = 0.25f;
+        if (player_Animation != null)
+        {
+            AnimatorClipInfo[] clipInfo = player_Animation.GetCurrentAnimatorClipInfo(0);
+            if (clipInfo.Length > 0 && clipInfo[0].clip != null)
+            {
+                duration = clipInfo[0].clip.length;
+            }
+        }
+
+        yield return new WaitForSeconds(duration);
+        isHurt = false;
+    }
+
+    private void Die(Vector2 damageSourcePosition)
+    {
+        isDead = true;
+
+        float knockbackDirX = transform.position.x < damageSourcePosition.x ? -1f : 1f;
+        rb.linearVelocity = new Vector2(knockbackDirX * knockbackForce.x, knockbackForce.y);
+
+        ChangeAnimationState("dying player");
+        StartCoroutine(WaitAndDie());
+    }
+
+    private IEnumerator WaitAndDie()
+    {
+        yield return null;
+
+        yield return new WaitForSeconds(0.3f);
+        rb.linearVelocity = Vector2.zero;
+        rb.bodyType = RigidbodyType2D.Kinematic;
+
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
+
+        float duration = 1.0f;
+        if (player_Animation != null)
+        {
+            AnimatorClipInfo[] clipInfo = player_Animation.GetCurrentAnimatorClipInfo(0);
+            if (clipInfo.Length > 0 && clipInfo[0].clip != null)
+            {
+                duration = Mathf.Max(0f, clipInfo[0].clip.length - 0.3f);
+            }
+        }
+
+        yield return new WaitForSeconds(duration);
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.MainMenu();
+        }
+        else
+        {
             gameObject.SetActive(false);
+        }
+        SceneManager.LoadScene("DeathScene");
+    }
+
+    private void ChangeAnimationState(string newAnimState)
+    {
+        if (player_Animation == null || currentAnimState == newAnimState) return;
+        if (!player_Animation.isActiveAndEnabled || player_Animation.runtimeAnimatorController == null) return;
+        player_Animation.Play(newAnimState, 0, 0f);
+        currentAnimState = newAnimState;
+    }
+
+    private void UpdateAnimation()
+    {
+        if (player_Animation == null || isHurt || isDead) return;
+
+        bool hasHorizontalInput = Mathf.Abs(horizontalInput) > 0.01f;
+
+        if (!isGrounded)
+        {
+            if (verticalInput > 0)
+            {
+                if (hasHorizontalInput)
+                    ChangeAnimationState("jump ru");
+                else
+                    ChangeAnimationState("jump UP");
+            }
+            else if (verticalInput < 0)
+            {
+                ChangeAnimationState("jump rd");
+            }
+            else
+            {
+                ChangeAnimationState("jump UP");
+            }
+            return;
+        }
+
+        if (hasHorizontalInput)
+        {
+            if (verticalInput > 0)
+            {
+                ChangeAnimationState("walk ru");
+            }
+            else if (verticalInput < 0)
+            {
+                ChangeAnimationState("walk rd");
+            }
+            else
+            {
+                ChangeAnimationState("walk");
+            }
+            return;
+        }
+
+        if (verticalInput > 0)
+        {
+            ChangeAnimationState("aim u");
+        }
+        else if (verticalInput < 0)
+        {
+            ChangeAnimationState("aim rd");
+        }
+        else
+        {
+            ChangeAnimationState("Player-idle 0");
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            TakeDamage(1, collision.transform.position);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("EnemyLaser"))
+        {
+            TakeDamage(1, other.transform.position);
+            Destroy(other.gameObject);
         }
     }
 
