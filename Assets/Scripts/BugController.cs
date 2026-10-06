@@ -384,7 +384,8 @@ public class BugController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("EnemyLaser"))
+
+        if (other.CompareTag("EnemyLaser")) // added enemy laser to unity tags
         {
             TakeDamage(1, other.transform.position);
             Destroy(other.gameObject);
